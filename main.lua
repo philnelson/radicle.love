@@ -54,16 +54,12 @@ function love.draw()
 	love.graphics.setColor( 86,67,52, 255 )
 	love.graphics.rectangle( 'fill', 0, (love.graphics.getHeight()-grass_size), love.graphics.getWidth(), grass_size )
 	
-	if(sun['x'] > love.graphics.getWidth()+40) then
+	if(sun['x'] < love.graphics.getWidth()+40) then
 		love.graphics.setColor( 255,255,0, 255 )
 		love.graphics.circle( 'fill', sun['x'], sun['y'], 80, 20 )
 	else
-		-- defining a table with the coordinates
-		-- this table could be built incrementally too
-		local vertices = {100, 100, 150, 50, 150, 200}
+		-- This will be the moon!
 
-		-- passing the table to the function as a second argument
-		love.graphics.polygon('fill', vertices)
 	end
 
 	love.graphics.setColor(73,40,31 )
